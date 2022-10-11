@@ -1,7 +1,5 @@
-use js_sys::JsString;
 use reqwasm::http::Request;
 use serde::{Deserialize, Serialize};
-use web_sys::console;
 use yew::prelude::*;
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]

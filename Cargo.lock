@@ -516,14 +516,12 @@ dependencies = [
 name = "yew-fpl"
 version = "0.1.0"
 dependencies = [
- "js-sys",
  "log",
  "reqwasm",
  "serde",
  "serde_json",
  "wasm-bindgen-futures",
  "wasm-logger",
- "web-sys",
  "yew",
 ]
 
