@@ -1,4 +1,51 @@
 .current {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    display: flex;
+}
+
+.asd {
+    flex: 1;
+    border: 1px solid black;
+    
+}
+
+.pointbench {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.transfersandcost{
+    font-size: 12px;
+    margin-right: auto;
+} 
+
+.teamvalue {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.bank {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.rank {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.points {
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.totpoints{
+    font-size: 12px;
+    margin-right: auto;
+}
+
+html {
+
+}
+body {
+    padding: 1em;
 }

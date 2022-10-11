@@ -56,20 +56,18 @@ pub struct CurrentComponentProps {
 }
 
 #[function_component(CurrentComponent)]
-fn period_component(props: &CurrentComponentProps) -> Html {
+fn current_component(props: &CurrentComponentProps) -> Html {
     let CurrentComponentProps { current } = props;
     html! {
-        <>
         <div class="current">
-            <div class="pointbench">{"points on bench"} {current.points_on_bench}</div>
-            <div class="transfersandcost"><p>{current.event_transfers}</p><p>{current.event_transfers_cost}</p></div>
-            <div class="teamvalue">{current.value}</div>
-            <div class="bank">{current.bank}</div>
-            <div class="rank">{current.overall_rank}</div>
-            <div class="points">{current.points}</div>
-            <div class="totpoints">{current.total_points}</div>
+            <div class="pointbench">{"points on bench: \t"} {current.points_on_bench}</div>
+            <div class="bank">{"money in bank: \t"}{current.bank}</div>
+            <div class="teamvalue">{"team value: \t"}{current.value as f64 / 10.0}</div>
+            <div class="transfersandcost">{"transfers: "}{current.event_transfers}{"    transfer cost: "}{current.event_transfers_cost}</div>
+            <div class="rank">{"rank: \t"}{current.overall_rank}</div>
+            <div class="points">{"points: \t"}{current.points}</div>
+            <div class="totpoints">{"total points: \t"}{current.total_points}</div>
         </div>
-        </>
     }
 }
 
@@ -93,13 +91,17 @@ fn app_component() -> Html {
     });
 
     html!({
-        match player_clone.as_ref() {
+        match (*player_clone).as_ref() {
             Some(f) => f
                 .current
                 .iter()
                 .map(|value| {
                     html! {
+                        <>
+                        <div class="asd">
                         <CurrentComponent current={value.clone()}/>
+                        </div>
+                        </>
                     }
                 })
                 .collect(),
